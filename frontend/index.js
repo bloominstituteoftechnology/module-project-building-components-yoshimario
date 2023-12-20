@@ -142,7 +142,22 @@ function moduleProject3() {
     let companyNameP = document.createElement("p");
     companyNameP.classList.add("company-name");
     companyNameP.textContent = footerData.companyName
+
+    let addressP = document.createElement("p");
+    addressP.classList.add("address");
+    addressP.textContent = footerData.address;
+
+    let contactEmailP = document.createElement("p");
+    contactEmailP.classList.add("contact-email");
+    contactEmailP.innerHTML = `Email: <a href="mailto:${footerData.contactEmail}">${footerData.contactEmail}</a>`;
+
+    companyInfoDiv.appendChild(companyNameP);
+    companyInfoDiv.appendChild(addressP);
+    companyInfoDiv.appendChild(contactEmailP);
+
     
+    footer.appendChild(companyInfoDiv);
+
     return footer
 
   }
