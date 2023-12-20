@@ -155,8 +155,18 @@ function moduleProject3() {
     companyInfoDiv.appendChild(addressP);
     companyInfoDiv.appendChild(contactEmailP);
 
-    
-    footer.appendChild(companyInfoDiv);
+    let socialMediaDiv = document.createElement("div");
+    socialMediaDiv.classList.add("social-media");
+
+    for (let platform in footerData.socialMedia) {
+      let socialMediaLink = document.createElement("a");
+      socialMediaLink.href = footerData.socialMedia[platform];
+      socialMediaLink.textContent = platform.charAt(0).toUpperCase() + platform.slice(1);
+      socialMediaDiv.appendChild(socialMediaLink);
+    }
+
+    footer.appendChild(companyInfoDiv)
+    footer.appendChild(socialMediaDiv);
 
     return footer
 
