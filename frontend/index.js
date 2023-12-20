@@ -165,8 +165,13 @@ function moduleProject3() {
       socialMediaDiv.appendChild(socialMediaLink);
     }
 
+    let currentYear = new Date().getFullYear();
+    let copyright = document.createElement("div");
+    copyright.textContent = `© ${footerData.companyName.toUpperCase()} ${currentYear}`;
+
     footer.appendChild(companyInfoDiv)
     footer.appendChild(socialMediaDiv);
+    footer.appendChild(copyright);
 
     return footer
 
